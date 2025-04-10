@@ -1,5 +1,3 @@
-import './styles.css'
-
 import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
@@ -15,8 +13,8 @@ renderer.setPixelRatio(window.devicePixelRatio)
 renderer.setSize(window.innerWidth, window.innerHeight)
 camera.position.setZ(30)
 
-const geometry = new THREE.TorusGeometry( 10, 3, 16, 100 ) 
-const material = new THREE.MeshStandardMaterial( { color: 0xffff00 } ) 
+const geometry = new THREE.TorusGeometry( 12, 3, 30, 100 ) 
+const material = new THREE.MeshPhongMaterial( { color: 0xffff00 } ) 
 const torus = new THREE.Mesh( geometry, material )
 scene.add( torus )
 
@@ -33,6 +31,7 @@ const gridHelper = new THREE.GridHelper(200,50)
 scene.add(pointLight, pointLightHelper, gridHelper)
 
 const controls = new OrbitControls(camera, renderer.domElement)
+controls.enableDamping = true
 
 function addStar(){
   const geometry = new THREE.SphereGeometry(0.15)

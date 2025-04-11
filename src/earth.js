@@ -29,7 +29,7 @@ const lightsMaterial = new THREE.MeshBasicMaterial({
     map: loader.load("../public/earthlights1k.jpg"),
     blending: THREE.AdditiveBlending,
     transparent: true,
-    opacity: 0.8
+    opacity: 0.6
 })
 const lightsMesh = new THREE.Mesh(globeGeometry, lightsMaterial)
 globeGroup.add(lightsMesh)
